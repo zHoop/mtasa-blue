@@ -23,6 +23,7 @@ class CClientVehicle;
 #include "CClientStreamElement.h"
 #include "CClientVehicleManager.h"
 #include "CVehicleUpgrades.h"
+#include <array>
 
 #define INVALID_PASSENGER_SEAT 0xFF
 #define DEFAULT_VEHICLE_HEALTH 1000
@@ -132,6 +133,12 @@ class CClientVehicle : public CClientStreamElement
     friend class CClientPed;
     friend class CClientVehicleManager;
     friend class CClientGame;            // TEMP HACK
+
+    struct SVehicleDummy
+    {
+        bool    bSet;
+        CVector vecPosition;
+    };
 
 protected:            // Use CDeathmatchVehicle constructor for now. Will get removed later when this class is
                       // cleaned up.
@@ -480,6 +487,9 @@ public:
     bool SetComponentScale(const SString& vehicleComponent, CVector vecScale, EComponentBaseType base = EComponentBase::PARENT);
     bool GetComponentScale(const SString& vehicleComponent, CVector& vecScale, EComponentBaseType base = EComponentBase::PARENT);
 
+    void     SetDummyPosition(eVehicleDummies eDummy, const CVector& vecPosition);
+    CVector* GetDummyPosition(eVehicleDummies eDummy);
+
     bool                                               SetComponentVisible(const SString& vehicleComponent, bool bVisible);
     bool                                               GetComponentVisible(const SString& vehicleComponent, bool& bVisible);
     std::map<SString, SVehicleComponentData>::iterator ComponentsBegin(void) { return m_ComponentData.begin(); }
@@ -670,6 +680,8 @@ protected:
     CMatrix                        m_matCreate;
     unsigned char                  m_ucFellThroughMapCount;
     SFixedArray<bool, MAX_WINDOWS> m_bWindowOpen;
+
+    std::array<SVehicleDummy, VEHICLE_TOTAL_MTA_DUMMIES> m_arrDummies = {0};
 
 public:
 #ifdef MTA_DEBUG

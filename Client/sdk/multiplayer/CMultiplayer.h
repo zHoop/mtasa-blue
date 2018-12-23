@@ -117,6 +117,7 @@ typedef void(GameEntityRenderHandler)(CEntitySAInterface* pEntity);
 typedef void(FxSystemDestructionHandler)(void* pFxSA);
 typedef AnimationId(DrivebyAnimationHandler)(AnimationId animGroup, AssocGroupId animId);
 typedef void(PedStepHandler)(CPedSAInterface* pPed, bool bFoot);
+typedef void (VehicleAddExhaustParticlesHandler)(CVehicleSAInterface* pInterface, CVector** pLeftFumesPosition, CVector** pRightFumesPosition);
 
 using VehicleWeaponHitHandler = void(SVehicleWeaponHitEvent& event);
 
@@ -237,6 +238,7 @@ public:
     virtual void  SetGameEntityRenderHandler(GameEntityRenderHandler* pHandler) = 0;
     virtual void  SetFxSystemDestructionHandler(FxSystemDestructionHandler* pHandler) = 0;
     virtual void  SetDrivebyAnimationHandler(DrivebyAnimationHandler* pHandler) = 0;
+    virtual void SetVehicleAddExhaustParticlesHandler(VehicleAddExhaustParticlesHandler* pHandler) = 0;
     virtual void  SetPedStepHandler(PedStepHandler* pHandler) = 0;
     virtual void  SetVehicleWeaponHitHandler(VehicleWeaponHitHandler* pHandler) = 0;
     virtual void  AllowMouseMovement(bool bAllow) = 0;

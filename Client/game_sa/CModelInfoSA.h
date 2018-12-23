@@ -344,9 +344,9 @@ public:
     unsigned int GetNumRemaps(void);
     void*        GetVehicleSuspensionData(void);
     void*        SetVehicleSuspensionData(void* pSuspensionLines);
-    CVector      GetVehicleExhaustFumesPosition() override;
+    CVector*     GetVehicleExhaustFumesPosition() override;
     void         SetVehicleExhaustFumesPosition(const CVector& vecPosition) override;
-    CVector      GetVehicleDummyPosition(eVehicleDummies eDummy) override;
+    CVector*     GetVehicleDummyPosition(eVehicleDummies eDummy) override;
     void         SetVehicleDummyPosition(eVehicleDummies eDummy, const CVector& vecPosition) override;
     static void  ResetAllVehicleDummies();
 
