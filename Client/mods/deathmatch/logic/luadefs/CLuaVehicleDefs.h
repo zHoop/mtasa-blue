@@ -50,6 +50,7 @@ public:
     LUA_DECLARE(GetVehicleTowingVehicle);
     LUA_DECLARE(GetVehiclePaintjob);
     LUA_DECLARE(GetVehiclePlateText);
+    LUA_DECLARE(GetVehicleHandbrake);
     LUA_DECLARE(IsVehicleDamageProof);
     LUA_DECLARE(IsVehicleFuelTankExplodable);
     LUA_DECLARE(IsVehicleFrozen);
@@ -134,6 +135,7 @@ public:
     LUA_DECLARE(SetVehicleNitroCount);
     LUA_DECLARE(SetVehicleNitroLevel);
     LUA_DECLARE(SetVehiclePlateText);
+    LUA_DECLARE(SetVehicleHandbrake);
     LUA_DECLARE(SetHeliBladeCollisionsEnabled);
     LUA_DECLARE(SetVehicleWindowOpen);
 

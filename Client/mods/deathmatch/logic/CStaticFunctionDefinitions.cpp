@@ -2834,6 +2834,12 @@ bool CStaticFunctionDefinitions::GetVehicleCurrentGear(CClientVehicle& Vehicle, 
     return true;
 }
 
+bool CStaticFunctionDefinitions::GetVehicleHandbrake(CClientVehicle& Vehicle, bool& bHandbrakeStatus)
+{
+    bHandbrakeStatus = Vehicle.GetGameVehicle()->IsHandbrakeOn();
+    return false;
+}
+
 bool CStaticFunctionDefinitions::SetVehicleColor(CClientEntity& Entity, const CVehicleColor& color)
 {
     RUN_CHILDREN(SetVehicleColor(**iter, color))
@@ -3272,6 +3278,22 @@ bool CStaticFunctionDefinitions::SetVehiclePaintjob(CClientEntity& Entity, unsig
             Vehicle.SetPaintjob(ucPaintjob);
             return true;
         }
+    }
+
+    return false;
+}
+
+bool CStaticFunctionDefinitions::SetVehicleHandbrake(CClientEntity& Entity, bool bHandbrakeStatus)
+{
+    RUN_CHILDREN(SetVehicleHandbrake(**iter, bHandbrakeStatus))
+
+    if (IS_VEHICLE(&Entity))
+    {
+        CClientVehicle& Vehicle = static_cast<CClientVehicle&>(Entity);
+
+        Vehicle.GetGameVehicle()->SetHandbrakeOn(bHandbrakeStatus);
+
+        return true;
     }
 
     return false;

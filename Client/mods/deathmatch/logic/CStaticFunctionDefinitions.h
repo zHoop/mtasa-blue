@@ -215,6 +215,7 @@ public:
     static bool            IsVehicleBlown(CClientVehicle& Vehicle, bool& bBlown);
     static bool            GetVehicleHeadLightColor(CClientVehicle& Vehicle, SColor& outColor);
     static bool            GetVehicleCurrentGear(CClientVehicle& Vehicle, unsigned short& currentGear);
+    static bool            GetVehicleHandbrake(CClientVehicle& Vehicle, bool& bHandbrakeStatus);
     static bool            GetVehicleVariant(CClientVehicle* pVehicle, unsigned char& ucVariant, unsigned char& ucVariant2);
     static bool            IsVehicleNitroRecharging(CClientVehicle& Vehicle, bool& bRecharging);
     static bool            IsVehicleNitroActivated(CClientVehicle& Vehicle, bool& bActivated);
@@ -252,6 +253,7 @@ public:
     static bool SetVehicleDamageProof(CClientEntity& Entity, bool bDamageProof);
     static bool SetVehiclePaintjob(CClientEntity& Entity, unsigned char ucPaintjob);
     static bool SetVehicleFuelTankExplodable(CClientEntity& Entity, bool bExplodable);
+    static bool SetVehicleHandbrake(CClientEntity& Entity, bool bHandbrakeStatus);
     static bool SetVehicleFrozen(CClientEntity& Entity, bool bFrozen);
     static bool SetVehicleAdjustableProperty(CClientEntity& Entity, unsigned short usAdjustableProperty);
     static bool SetHelicopterRotorSpeed(CClientVehicle& Vehicle, float fSpeed);
