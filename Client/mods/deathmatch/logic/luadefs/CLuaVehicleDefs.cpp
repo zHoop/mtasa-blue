@@ -44,6 +44,7 @@ void CLuaVehicleDefs::LoadFunctions()
         {"getVehicleTowingVehicle", GetVehicleTowingVehicle},
         {"getVehiclePaintjob", GetVehiclePaintjob},
         {"getVehiclePlateText", GetVehiclePlateText},
+        {"getVehicleHandbrake", GetVehicleHandbrake},
         {"getVehicleWheelStates", GetVehicleWheelStates},
         {"isVehicleWheelOnGround", IsVehicleWheelCollided},
         {"isVehicleDamageProof", IsVehicleDamageProof},
@@ -137,6 +138,7 @@ void CLuaVehicleDefs::LoadFunctions()
         {"setVehicleNitroCount", SetVehicleNitroCount},
         {"setVehicleNitroLevel", SetVehicleNitroLevel},
         {"setVehiclePlateText", SetVehiclePlateText},
+        {"setVehicleHandbrake", SetVehicleHandbrake},
         {"setHeliBladeCollisionsEnabled", SetHeliBladeCollisionsEnabled},
         {"setVehicleWindowOpen", SetVehicleWindowOpen},
         {"setVehicleModelExhaustFumesPosition", SetVehicleModelExhaustFumesPosition},
@@ -186,7 +188,7 @@ void CLuaVehicleDefs::AddClass(lua_State* luaVM)
     lua_classfunction(luaVM, "getTowedByVehicle", "getVehicleTowedByVehicle");
     lua_classfunction(luaVM, "getOccupant", "getVehicleOccupant");
     lua_classfunction(luaVM, "getPlateText", "getVehiclePlateText");
-    lua_classfunction(luaVM, "getHandbrake", "getVehicleHandbrake");
+    //lua_classfunction(luaVM, "getHandbrake", "getVehicleHandbrake");
     lua_classfunction(luaVM, "getOccupants", "getVehicleOccupants");
     lua_classfunction(luaVM, "getHelicopterRotorSpeed", "getHelicopterRotorSpeed");
     lua_classfunction(luaVM, "areHeliBladeCollisionsEnabled", "getHeliBladeCollisionsEnabled");
@@ -264,7 +266,7 @@ void CLuaVehicleDefs::AddClass(lua_State* luaVM)
     lua_classfunction(luaVM, "setHeadLightColor", "setVehicleHeadLightColor");
     lua_classfunction(luaVM, "setColor", "setVehicleColor");
     lua_classfunction(luaVM, "setPlateText", "setVehiclePlateText");
-    lua_classfunction(luaVM, "setHandbrake", "setVehicleHandbrake");
+    //lua_classfunction(luaVM, "setHandbrake", "setVehicleHandbrake");
     lua_classfunction(luaVM, "setGravity", "setVehicleGravity");
     lua_classfunction(luaVM, "setModelExhaustFumesPosition", "setVehicleModelExhaustFumesPosition");
     lua_classfunction(luaVM, "setVehicleModelDummyPosition", "setVehicleModelDummyPosition");
@@ -284,7 +286,7 @@ void CLuaVehicleDefs::AddClass(lua_State* luaVM)
     lua_classvariable(luaVM, "name", NULL, "getVehicleName");
     lua_classvariable(luaVM, "blown", NULL, "isVehicleBlown");
     lua_classvariable(luaVM, "vehicleType", NULL, "getVehicleType");
-    lua_classvariable(luaVM, "handbrake", "setVehicleHandbrake", "getVehicleHandbrake");
+    //lua_classvariable(luaVM, "handbrake", "setVehicleHandbrake", "getVehicleHandbrake");
     lua_classvariable(luaVM, "gear", NULL, "getVehicleCurrentGear");
     lua_classvariable(luaVM, "onGround", NULL, "isVehicleOnGround");
     lua_classvariable(luaVM, "damageProof", NULL, "isVehicleDamageProof");
